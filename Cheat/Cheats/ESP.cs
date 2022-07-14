@@ -172,6 +172,18 @@ namespace EgguWare.Cheats
                                 OutlineText += " - Unlocked";
                             }
                         }
+                        if (G.Settings.GlobalOptions.ShowVehicleFuel)
+                        {
+                            float fuel = Mathf.Round(100 * ((InteractableVehicle)obj.Object).fuel / ((InteractableVehicle)obj.Object).asset.fuel);
+                            LabelText += $"<color=white> - </color><color=ff5a00>Fuel: {fuel}%</color>";
+                            OutlineText += $" - Fuel: {fuel}%";
+                        }
+                        if (G.Settings.GlobalOptions.ShowVehicleHealth)
+                        {
+                            float health = Mathf.Round(100 *((InteractableVehicle)obj.Object).health / ((InteractableVehicle)obj.Object).asset.health);
+                            LabelText += $"\n<color=white></color><color=ff5a00>HP: {health}</color>";
+                            OutlineText += $"\nHP: {health}";
+                        }
                         break;
                     case ESPObject.Bed:
                         if (obj.Options.Name)
@@ -237,6 +249,54 @@ namespace EgguWare.Cheats
                             {
                                 LabelText += $"<color=white> - Unknown</color>";
                                 OutlineText += " - Unknown";
+                            }
+                        }
+                        break;
+                    case ESPObject.Turret:
+                        if (obj.Options.Name)
+                        {
+                            LabelText += ((InteractableSentry)obj.Object).sentryAsset.itemName;
+                            OutlineText += ((InteractableSentry)obj.Object).sentryAsset.itemName;
+                        }
+                        if (G.Settings.GlobalOptions.ShowTurretStatus)
+                        {
+                            bool Powered = ((InteractableSentry)obj.Object).isPowered;
+                            if (Powered)
+                            {
+                                LabelText += $"\n<color=white> </color><color=ff5a00>Powered</color>";
+                                OutlineText += "\n Powered";
+                            }
+                            else
+                            {
+                                LabelText += $"\n<color=white> </color><color=ff5a00>Not Powered</color>";
+                                OutlineText += "\n Not Powered";
+                            }
+                        }
+                        break;
+                    case ESPObject.Generator:
+                        if (obj.Options.Name)
+                        {
+                            LabelText += Enum.GetName(typeof(ESPObject), obj.Target);
+                            OutlineText += Enum.GetName(typeof(ESPObject), obj.Target);
+                        }
+                        if (G.Settings.GlobalOptions.ShowGeneratorFuel)
+                        {
+                            float fuel = Mathf.Round(100 * ((InteractableGenerator)obj.Object).fuel / ((InteractableGenerator)obj.Object).capacity);
+                            LabelText += $"<color=white> - </color><color=ff5a00>Fuel: {fuel}%</color>";
+                            OutlineText += $" - {fuel}%";
+                        }
+                        if (G.Settings.GlobalOptions.ShowGeneratorStatus)
+                        {
+                            bool Powered = ((InteractableGenerator)obj.Object).isPowered;
+                            if (Powered)
+                            {
+                                LabelText += $"\n<color=white> </color><color=ff5a00>Powered</color>";
+                                OutlineText += "\n Powered";
+                            }
+                            else
+                            {
+                                LabelText += $"\n<color=white> </color><color=ff5a00>Not Powered</color>";
+                                OutlineText += "\n Not Powered";
                             }
                         }
                         break;

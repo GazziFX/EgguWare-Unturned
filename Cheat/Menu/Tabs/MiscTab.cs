@@ -44,6 +44,7 @@ namespace EgguWare.Menu.Tabs
                     G.Settings.MiscOptions.DrawFOVCircle = GUILayout.Toggle(G.Settings.MiscOptions.DrawFOVCircle, "Draw Pixel FOV Circle");
                 }
             }
+            G.Settings.MiscOptions.QuickSalvage = GUILayout.Toggle(G.Settings.MiscOptions.QuickSalvage, "Quick Salvage");
             G.Settings.MiscOptions.AutoItemPickup = GUILayout.Toggle(G.Settings.MiscOptions.AutoItemPickup, "Auto Item Pickup");
             if (GUILayout.Button("Open Whitelist Menu"))
             {

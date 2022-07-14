@@ -112,6 +112,30 @@ namespace EgguWare.Utilities
                         }
                     }
                     #endregion
+                    #region Turret
+                    if (G.Settings.TurretOptions.Enabled)
+                    {
+                        foreach (InteractableSentry i in FindObjectsOfType<InteractableSentry>())
+                        {
+                            ESPObj obj = new ESPObj(ESPObject.Turret, i, i.gameObject, G.Settings.TurretOptions);
+                            TempObjects.Add(obj);
+                            if (!G.BeingSpied)
+                                ESP.ApplyChams(obj, Colors.GetColor("Turret_Chams_Visible_Color"), Colors.GetColor("Turret_Chams_Occluded_Color"));
+                        }
+                    }
+                    #endregion
+                    #region Generator
+                    if (G.Settings.GeneratorOptions.Enabled)
+                    {
+                        foreach (InteractableGenerator i in FindObjectsOfType<InteractableGenerator>())
+                        {
+                            ESPObj obj = new ESPObj(ESPObject.Generator, i, i.gameObject, G.Settings.GeneratorOptions);
+                            TempObjects.Add(obj);
+                            if (!G.BeingSpied)
+                                ESP.ApplyChams(obj, Colors.GetColor("Generator_Chams_Visible_Color"), Colors.GetColor("Generator_Chams_Occluded_Color"));
+                        }
+                    }
+                    #endregion
                     #region Storages
                     if (G.Settings.StorageOptions.Enabled)
                     {

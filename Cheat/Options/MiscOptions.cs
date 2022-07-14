@@ -29,5 +29,6 @@ namespace EgguWare.Options
         public bool AllOnMap = true;
         public bool DrawFOVCircle = true;
         public bool GrabItemThroughWalls = true;
+        public bool QuickSalvage = false;
     }
 }
