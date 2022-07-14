@@ -50,7 +50,7 @@ namespace EgguWare.Utilities
             T.OverrideMethod(typeof(Player), typeof(hkPlayer), "ReceiveTakeScreenshot", BindingFlags.Public | BindingFlags.Instance,
                 BindingFlags.Public | BindingFlags.Instance); //Player
             T.OverrideMethod(typeof(UseableGun), typeof(hkUsableGun), "ballistics", BindingFlags.NonPublic | BindingFlags.Instance,
-                BindingFlags.Public | BindingFlags.Instance); //UsableGun
+                BindingFlags.Public | BindingFlags.Static); //UsableGun
             T.OverrideMethod(typeof(ChatManager), typeof(hkChatManager), "receiveChatMessage", BindingFlags.Static | BindingFlags.Public,
                 BindingFlags.Public | BindingFlags.Static); //ChatManager
             T.OverrideMethod(typeof(LocalHwid), typeof(hkLocalHwid), "getHwid", BindingFlags.Static | BindingFlags.Public,
