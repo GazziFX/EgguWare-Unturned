@@ -27,9 +27,18 @@ namespace EgguWare.Options.ESP
         #region Vehicle
         public bool VehicleLocked = true;
         public bool OnlyUnlocked = false;
+        public bool ShowVehicleFuel = false;
+        public bool ShowVehicleHealth = false;
         #endregion
         #region Storage
         public bool ShowLocked = true;
+        #endregion
+        #region Turrets
+        public bool ShowTurretStatus = false;
+        #endregion
+        #region Generator
+        public bool ShowGeneratorStatus;
+        public bool ShowGeneratorFuel = false;
         #endregion
         #region Other
         public Dictionary<string, Color32> GlobalColors = new Dictionary<string, Color32>();

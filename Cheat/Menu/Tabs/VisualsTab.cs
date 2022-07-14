@@ -82,6 +82,19 @@ namespace EgguWare.Menu.Tabs
                     DrawGlobals(G.Settings.FlagOptions, "Claim Flags");
                     DrawGlobals2(G.Settings.FlagOptions);
                     break;
+                case ESPObject.Turret:
+                    SelectedOptions = G.Settings.TurretOptions;
+                    DrawGlobals(G.Settings.TurretOptions, "Turrets");
+                    G.Settings.GlobalOptions.ShowTurretStatus = GUILayout.Toggle(G.Settings.GlobalOptions.ShowTurretStatus, "Show Status");
+                    DrawGlobals2(G.Settings.TurretOptions);
+                    break;
+                case ESPObject.Generator:
+                    SelectedOptions = G.Settings.GeneratorOptions;
+                    DrawGlobals(G.Settings.GeneratorOptions, "Generators");
+                    G.Settings.GlobalOptions.ShowGeneratorFuel = GUILayout.Toggle(G.Settings.GlobalOptions.ShowGeneratorFuel, "Show Fuel");
+                    G.Settings.GlobalOptions.ShowGeneratorStatus = GUILayout.Toggle(G.Settings.GlobalOptions.ShowGeneratorStatus, "Show Status");
+                    DrawGlobals2(G.Settings.GeneratorOptions);
+                    break;
             }
             GUILayout.EndScrollView();
             GUILayout.EndArea();

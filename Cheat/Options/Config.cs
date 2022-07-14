@@ -16,6 +16,8 @@ namespace EgguWare.Options
         public ESPOptions VehicleOptions = new ESPOptions();
         public ESPOptions ZombieOptions = new ESPOptions();
         public ESPOptions FlagOptions = new ESPOptions();
+        public ESPOptions TurretOptions = new ESPOptions();
+        public ESPOptions GeneratorOptions = new ESPOptions();
 
         public OtherOptions GlobalOptions = new OtherOptions();
 

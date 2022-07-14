@@ -64,7 +64,9 @@ namespace EgguWare.Menu.Tabs
                         G.Settings.Mute[player.playerID.steamID.m_SteamID] = mute.Next();
                     if (GUILayout.Button("Status: " + Enum.GetName(typeof(Priority), priority)))
                         G.Settings.Priority[player.playerID.steamID.m_SteamID] = priority.Next();
-
+                    if (G.UnrestrictedMovement)
+                        if (GUILayout.Button("Teleport To Player"))
+                            Player.player.transform.position = player.player.transform.position;
                     if (GUILayout.Button("Camera"))
                     {
                         if (PlayerCam.player == player)

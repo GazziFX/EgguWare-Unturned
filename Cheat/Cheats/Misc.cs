@@ -33,6 +33,9 @@ namespace EgguWare.Cheats
                 Player.player.look.isTracking = G.Settings.MiscOptions.FreeCam;
             }
 
+            if (G.Settings.MiscOptions.QuickSalvage)
+                Player.player.interact.ReceiveSalvageTimeOverride(0.4f);
+
             if (G.Settings.MiscOptions.Spam && !String.IsNullOrEmpty(G.Settings.MiscOptions.SpamText) && !PlayerLifeUI.chatting) // lets the player type in chat while spamming
                 ChatManager.sendChat(EChatMode.GLOBAL, G.Settings.MiscOptions.SpamText);
         }

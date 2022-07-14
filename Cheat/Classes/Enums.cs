@@ -24,7 +24,9 @@ namespace EgguWare.Classes
         Zombie,
         Storage,
         Bed,
-        Flag
+        Flag,
+        Turret,
+        Generator
     }
 
     public enum TargetLimb
